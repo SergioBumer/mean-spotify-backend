@@ -101,19 +101,19 @@ function updateAlbum(req, res) {
     const artistId = req.params.id;
     const update = req.body;
 
-    Album.findByIdAndUpdate(artistId, update, (err, artistUpdated) => {
+    Album.findByIdAndUpdate(artistId, update, (err, albumUpdated) => {
         if (err) {
             res.status(500).send({
                 "message": `Error al actualizar el artista ${artistId}`
             });
         } else {
-            if (!artistUpdated) {
+            if (!albumUpdated) {
                 res.status(404).send({
                     "message": `Error al actualizar el album. Album no encontrado.`
                 });
             } else {
                 res.status(200).send({
-                    artist: artistUpdated
+                    album: albumUpdated
                 });
             }
         }
@@ -136,10 +136,10 @@ function deleteAlbum(req, res) {
                 Song.find({ album: albumRemoved._id }).remove((err, songRemoved) => {
                     if (err) {
                         res.status(500).send({
-                            "message": `Error al eliminar el album del artista ${albumRemoved._id}`
+                            "message": `Error al eliminar el album del artista ${songRemoved._id}`
                         });
                     } else {
-                        if (!albumRemoved) {
+                        if (!songRemoved) {
                             res.status(404).send({
                                 "message": `No se han eliminado las canciones`
                             });
