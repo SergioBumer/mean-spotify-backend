@@ -1,5 +1,12 @@
 const express = require('express');
 const multipart = require('connect-multiparty');
+const fs = require('fs');
+const dir = './uploads/users';
+if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, {
+        recursive: true
+    });
+}
 const md_upload = multipart({ uploadDir: './uploads/users' });
 
 const UserController = require('../controllers/user');
