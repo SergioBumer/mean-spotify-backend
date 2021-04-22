@@ -9,6 +9,7 @@ server.use(express.json());
 const userRoutes = require('./routes/user');
 const artistRoutes = require('./routes/artist');
 const albumRoutes = require('./routes/album');
+const songRoutes = require('./routes/song');
 
 //Cabeceras HTTp
 
@@ -17,6 +18,7 @@ const albumRoutes = require('./routes/album');
 server.use('/api', userRoutes);
 server.use('/api', artistRoutes);
 server.use('/api', albumRoutes);
+server.use('/api', songRoutes);
 
 
 module.exports = server;
