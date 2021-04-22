@@ -8,7 +8,7 @@ const config = require('./config');
 
 const connectionUrl = `mongodb+srv://${config.USER}:${config.PASSWORD}@${config.DBHOST}/${config.DBNAME}?retryWrites=true&w=majority`;
 
-
+mongoose.Promise = global.Promise;
 mongoose.connect(connectionUrl, (err, res) => {
     if (err) {
         throw err;
