@@ -2,6 +2,8 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt-nodejs');
 const user = require('../models/user');
 const { createToken } = require('../services/jwt');
+const fs = require('fs');
+const path = require('path');
 
 const validExtensions = [
     "png", "jpg", "gif", "svg"
@@ -174,10 +176,23 @@ function uploadImage(req, res) {
     }
 }
 
+function getUserImage(req, res) {
+    var imageFile = req.params.imageFile;
+    var pathFile = './uploads/users/' + imageFile;
+    fs.exists(pathFile, (exists) => {
+        if (exists) {
+            res.status(200).sendFile(path.resolve(pathFile));
+        } else {
+            res.status(404).send('No existe la imagen.');
+        }
+    });
+}
+
 module.exports = {
     pruebas,
     saveUser,
     loginUser,
     updateUser,
-    uploadImage
+    uploadImage,
+    getUserImage
 }

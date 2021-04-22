@@ -12,5 +12,6 @@ api.post('/register', UserController.saveUser);
 api.post('/login', UserController.loginUser);
 api.patch('/updateUser/:id', ensureAuth, UserController.updateUser);
 api.post('/uploadImage/:id', [ensureAuth, md_upload], UserController.uploadImage);
+api.get('/getImage/:imageFile', [ensureAuth, md_upload], UserController.getUserImage);
 
 module.exports = api;
