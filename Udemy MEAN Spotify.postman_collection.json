@@ -1,0 +1,669 @@
+{
+	"info": {
+		"_postman_id": "c4c14515-548e-4f71-b548-a9b83a98a93c",
+		"name": "Udemy MEAN Spotify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Probando controlador",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/probando",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"probando"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login de usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"surname\": \"Admin\",\r\n    \"email\": \"tecnologia@bumer.com\",\r\n    \"password\": \"987654321\",\r\n    \"getHash\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registro de usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Admin\",\r\n    \"surname\": \"Admin\",\r\n    \"email\": \"tecnologia@bumer.com\",\r\n    \"password\": \"987654321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Usuario",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surName\": \"Admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/updateUser/608084104618cc6644340e6d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"updateUser",
+								"608084104618cc6644340e6d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargar Imagen",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/Tests/ejemplo2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/getImage/7evvbLz0rI10OcJmcgiSemfR.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"getImage",
+								"7evvbLz0rI10OcJmcgiSemfR.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener imagen",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/Tests/ejemplo2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/getImage/7evvbLz0rI10OcJmcgiSemfR.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"getImage",
+								"7evvbLz0rI10OcJmcgiSemfR.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artist",
+			"item": [
+				{
+					"name": "Guardar artista",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Edguy\",\r\n    \"description\": \"Power Metal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/artist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"artist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener artistas",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/artists/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"artists",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener artista",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/artist/608068469e3cb023dae2cc7a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"artist",
+								"608068469e3cb023dae2cc7a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar artista",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Extreme Metal, Thrash Metal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/artist/60816bc268ef804c8823d7f7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"artist",
+								"60816bc268ef804c8823d7f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar artista",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/artist/60816bc268ef804c8823d7f7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"artist",
+								"60816bc268ef804c8823d7f7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargar Imagen",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/Tests/ejempl1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/uploadArtistImage/6081691c3bec0b9d1ce45260",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"uploadArtistImage",
+								"6081691c3bec0b9d1ce45260"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener imagen",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Pictures/Tests/ejemplo2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/getArtistImage/jmdHCIvXD_7iF9aCtDqCFDjQ.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"getArtistImage",
+								"jmdHCIvXD_7iF9aCtDqCFDjQ.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Album",
+			"item": [
+				{
+					"name": "Guardar album",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Master of Puppets\",\r\n    \"description\": \"\",\r\n    \"year\": 1986,\r\n    \"artist\": \"608068469e3cb023dae2cc7a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/album",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"album"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/album/608196e6a37ac874a8490a9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"album",
+								"608196e6a37ac874a8490a9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener albumes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/albums/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"albums",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Album",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Hard Wired to self destruct\",\r\n    \"year\": 2016\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/album/60819b693aed865350f340df",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"album",
+								"60819b693aed865350f340df"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cargar Imagen Album",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/USER/Desktop/81aDxiohznL._SL1300_.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3977/api/uploadAlbumImage/608196e6a37ac874a8490a9c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"uploadAlbumImage",
+								"608196e6a37ac874a8490a9c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener imagen album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/getAlbumImage/rg1ha4zUJZXn89cWLHvxcL9Q.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"getAlbumImage",
+								"rg1ha4zUJZXn89cWLHvxcL9Q.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar album",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MDgwODQxMDQ2MThjYzY2NDQzNDBlNmQiLCJuYW1lIjoiQWRtaW4iLCJyb2xlIjoiUk9MRV9BRE1JTiIsImVtYWlsIjoidGVjbm9sb2dpYUBidW1lci5jb20iLCJpbWFnZSI6IiIsImlhdCI6MTYxOTA1MDQ0N30.MymfruOWXXWs-e5-_fWZRLa0Icx97OyFywHaQoUfur8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3977/api/album/608192b5aebc752ccc5c09de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3977",
+							"path": [
+								"api",
+								"album",
+								"608192b5aebc752ccc5c09de"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
