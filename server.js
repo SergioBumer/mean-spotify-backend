@@ -6,13 +6,13 @@ server.use(express.json());
 
 // Cargar rutas
 
+const userRoutes = require('./routes/user');
+
 //Cabeceras HTTp
 
 // Rutas Base
 
-server.get('/pruebas', (req, res) => {
-    res.status(201).send({ "message": "Hola" });
-});
+server.use('/api', userRoutes);
 
 
 module.exports = server;
