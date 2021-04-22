@@ -3,6 +3,10 @@ const bcrypt = require('bcrypt-nodejs');
 const user = require('../models/user');
 const { createToken } = require('../services/jwt');
 
+const validExtensions = [
+    "png", "jpg", "gif", "svg"
+]
+
 function pruebas(req, res) {
     res.status(201).send({
         message: "Probando una acción del controlador de usuarios del API REST"
@@ -16,7 +20,7 @@ function saveUser(req, res) {
     const params = req.body;
 
     user.name = params.name;
-    user.surname = params.surname;
+    user.surName = params.surname;
     user.email = params.email;
     user.role = 'ROLE_USER';
     user.image = '';
@@ -108,9 +112,72 @@ function loginUser(req, res) {
 
 }
 
+function updateUser(req, res) {
+    const userId = req.params.id;
+    const update = req.body;
+
+    User.findByIdAndUpdate(userId, update, (err, userUpdated) => {
+        if (err) {
+            res.status(500).send({
+                "message": `Error al actualizar el usuario ${userId}`
+            });
+        } else {
+            if (!userUpdated) {
+                res.status(404).send({
+                    "message": `Error al actualizar el usuario. Usuario no encontrado.`
+                });
+            } else {
+                res.status(200).send({
+                    user: userUpdated
+                });
+            }
+        }
+    });
+}
+
+function uploadImage(req, res) {
+    var userId = req.params.id;
+    var file_name = "No subido...";
+
+    if (req.files) {
+        var file_path = req.files.image.path;
+
+        var file_split = file_path.split("\\");
+        var file_name = file_split[2];
+
+        var ext_split = file_name.split("\.");
+        var file_ext = ext_split[1];
+
+        if (validExtensions.includes(file_ext)) {
+            User.findByIdAndUpdate(userId, { image: file_name }, (err, userUpdated) => {
+                if (err) {
+                    res.status(500).send({
+                        "message": `Error al actualizar el usuario ${userId}`
+                    });
+                } else {
+                    if (!userUpdated) {
+                        res.status(404).send({
+                            "message": `Error al actualizar el usuario. Usuario no encontrado.`
+                        });
+                    } else {
+                        res.status(200).send({
+                            user: userUpdated
+                        });
+                    }
+                }
+            });
+        } else {
+            res.status(502).send('Imagen no válida');
+        }
+    } else {
+        res.status(404).send('No se ha subido ninguna imagen');
+    }
+}
 
 module.exports = {
     pruebas,
     saveUser,
-    loginUser
+    loginUser,
+    updateUser,
+    uploadImage
 }
