@@ -22,7 +22,7 @@ function saveUser(req, res) {
     const params = req.body;
 
     user.name = params.name;
-    user.surName = params.surname;
+    user.surName = params.surName;
     user.email = params.email;
     user.role = 'ROLE_USER';
     user.image = '';
@@ -34,7 +34,7 @@ function saveUser(req, res) {
                 throw err;
             } else {
                 user.password = hash;
-                if (user.name != null && user.surname != null && user.email != null) {
+                if (user.name != null && user.surName != null && user.email != null) {
                     user.save((err, userStored) => {
                         if (err) {
                             return res.status(500).send({
@@ -47,7 +47,8 @@ function saveUser(req, res) {
                                 })
                             } else {
                                 return res.status(201).send({
-                                    message: "Usuario registrado satisfactoriamente."
+                                    message: "Usuario registrado satisfactoriamente.",
+                                    user: userStored
 
                                 });
                             }
